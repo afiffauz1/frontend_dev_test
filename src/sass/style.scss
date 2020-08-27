@@ -1,0 +1,169 @@
+@import "default";
+
+$main-bg: #262a41;
+$gray-color: #3c3f54;
+$white-text: whitesmoke;
+$black-text: #2f2f2b;
+
+%box {
+  border: none;
+  border-radius: 0.75em;
+}
+
+%container-basis {
+  flex-basis: 50%;
+}
+
+%discover-default {
+  width: 60%;
+  margin: 100px auto;
+}
+
+%project-box {
+  border-radius: 0.5em;
+  padding: 40px;
+  margin-top: 20px;
+}
+
+%project-fontStyle {
+  line-height: 50px;
+  color: $white-text;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+%center-text {
+  text-align: center;
+}
+
+body {
+  display: flex;
+  background-color: $main-bg;
+  padding: 40px;
+}
+
+.discover-container {
+  @extend %container-basis;
+
+  .nav {
+    @extend %box;
+    padding: 12px;
+    background-color: $gray-color;
+    color: $white-text;
+  }
+}
+
+.tasklist-container {
+  @extend %container-basis;
+}
+
+.discover {
+  @extend %discover-default;
+  color: $white-text;
+  line-height: 45px;
+  text-align: center;
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: justify;
+  }
+
+  p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: $white-text;
+    opacity: 0.6;
+    text-align: justify;
+  }
+
+  input {
+    @extend %box;
+    width: 100%;
+    background-color: $gray-color;
+    padding: 20px 40px;
+    color: $white-text;
+    margin-top: 50px;
+  }
+
+  ::placeholder {
+    color: $white-text;
+    opacity: 1;
+  }
+}
+
+.projects {
+  @extend %discover-default;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.projects::after {
+  content: "";
+  width: 15em;
+}
+
+.green-house {
+  @extend %center-text, %project-fontStyle;
+  h1 {
+    @extend %project-box;
+    background-image: linear-gradient(to top right, #ec008c, #fc6767);
+    font-size: 3rem;
+    font-weight: 700;
+  }
+}
+
+.cyber-punk {
+  @extend %center-text, %project-fontStyle;
+  color: $white-text;
+  h1 {
+    @extend %project-box;
+    background-image: linear-gradient(to top right, #67b26f, #4ca2cd);
+    font-size: 3rem;
+    font-weight: 700;
+  }
+}
+
+.easy-crypto {
+  @extend %center-text, %project-fontStyle;
+  color: $white-text;
+  h1 {
+    @extend %project-box;
+    background-image: linear-gradient(to top right, #a044ff, #6a3093);
+    font-size: 3rem;
+    font-weight: 700;
+  }
+}
+
+.travel-app {
+  @extend %center-text, %project-fontStyle;
+  color: $white-text;
+  h1 {
+    @extend %project-box;
+    background-image: linear-gradient(to top right, #7f7fd5, #91eae4);
+    font-size: 3rem;
+    font-weight: 700;
+  }
+}
+
+.landing-page {
+  @extend %center-text, %project-fontStyle;
+  color: $white-text;
+  h1 {
+    @extend %project-box;
+    background-image: linear-gradient(to top right, #fdc830, #f37335);
+    font-size: 3rem;
+    font-weight: 700;
+  }
+}
+
+.other {
+  @extend %center-text;
+  color: $white-text;
+  h1 {
+    @extend %project-box;
+    background-color: $gray-color;
+    font-size: 3rem;
+    font-weight: 700;
+  }
+}
