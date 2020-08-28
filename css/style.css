@@ -147,18 +147,41 @@ a {
   text-decoration: none;
 }
 
-.discover input, .discover-container .nav {
+th, td {
   border: none;
-  border-radius: 0.75em;
+  text-align: left;
+}
+
+table {
+  width: 100%;
+  margin-top: 25px;
+  line-height: 40px;
+  border-collapse: collapse;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+th {
+  font-weight: 600;
+}
+
+.other h1, .landing-page h1, .travel-app h1, .easy-crypto h1, .cyber-punk h1, .green-house h1, .discover h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.task-info h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.task-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .tasklist-container, .discover-container {
   flex-basis: 50%;
-}
-
-.projects, .discover {
-  width: 60%;
-  margin: 100px auto;
 }
 
 .other h1, .landing-page h1, .travel-app h1, .easy-crypto h1, .cyber-punk h1, .green-house h1 {
@@ -185,29 +208,105 @@ body {
 }
 
 .discover-container .nav {
+  border-radius: 0.75em;
   padding: 12px;
   background-color: #3c3f54;
   color: whitesmoke;
 }
 
+.tasklist-container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  padding: 20px;
+  border-radius: 1.2em;
+  color: #2f2f2b;
+}
+.tasklist-container .btn {
+  border: none;
+  padding: 10px 20px;
+  margin-top: 50px;
+  background-color: #a044ff;
+}
+.tasklist-container a {
+  border: none;
+  display: inline-block;
+  color: #2f2f2b;
+  align-self: flex-end;
+  margin-left: auto;
+  font-size: 3rem;
+  color: whitesmoke;
+  border-radius: 0.3em;
+}
+.tasklist-container a:active {
+  background-color: #a044ff;
+  opacity: 0.8;
+}
+
+.task-header {
+  display: flex;
+}
+
+.task-info {
+  flex-basis: 65%;
+}
+.task-info p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  opacity: 0.7;
+  line-height: 30px;
+  margin-top: 20px;
+}
+
+.task-member {
+  flex-basis: 30%;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.task-member a {
+  font-size: 2rem;
+  align-self: center;
+  opacity: 0.6;
+  color: #2f2f2b;
+}
+
+.photo-member {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid white;
+}
+.photo-member img {
+  width: 100%;
+}
+
+.task-content {
+  margin-top: 50px;
+}
 .discover {
+  width: 60%;
+  margin: 100px auto;
   color: whitesmoke;
   line-height: 45px;
   text-align: center;
 }
 .discover h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  text-align: justify;
+  text-align: left;
 }
 .discover p {
   font-size: 1.3rem;
   font-weight: 600;
   color: whitesmoke;
   opacity: 0.6;
-  text-align: justify;
+  text-align: left;
 }
 .discover input {
+  border: none;
+  border-radius: 1em;
   width: 100%;
   background-color: #3c3f54;
   padding: 20px 40px;
@@ -220,6 +319,8 @@ body {
 }
 
 .projects {
+  width: 60%;
+  margin: 100px auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -230,55 +331,115 @@ body {
   width: 15em;
 }
 
+.green-house {
+  margin-right: 10px;
+}
 .green-house h1 {
   background-image: linear-gradient(to top right, #ec008c, #fc6767);
-  font-size: 3rem;
-  font-weight: 700;
 }
 
 .cyber-punk {
+  margin-right: 10px;
   color: whitesmoke;
 }
 .cyber-punk h1 {
   background-image: linear-gradient(to top right, #67b26f, #4ca2cd);
-  font-size: 3rem;
-  font-weight: 700;
 }
 
 .easy-crypto {
+  margin-right: 10px;
   color: whitesmoke;
 }
 .easy-crypto h1 {
   background-image: linear-gradient(to top right, #a044ff, #6a3093);
-  font-size: 3rem;
-  font-weight: 700;
 }
 
 .travel-app {
+  margin-right: 10px;
   color: whitesmoke;
 }
 .travel-app h1 {
   background-image: linear-gradient(to top right, #7f7fd5, #91eae4);
-  font-size: 3rem;
-  font-weight: 700;
 }
 
 .landing-page {
+  margin-right: 10px;
   color: whitesmoke;
 }
 .landing-page h1 {
   background-image: linear-gradient(to top right, #fdc830, #f37335);
-  font-size: 3rem;
-  font-weight: 700;
 }
 
 .other {
+  margin-right: 10px;
   color: whitesmoke;
 }
 .other h1 {
   background-color: #3c3f54;
-  font-size: 3rem;
-  font-weight: 700;
+}
+
+@media screen and (max-width: 992px) {
+  body {
+    flex-direction: column;
+  }
+
+  .task {
+    overflow-x: auto;
+  }
+
+  .task-header {
+    justify-content: space-between;
+  }
+
+  .discover,
+.projects {
+    width: 100%;
+  }
+
+  table {
+    line-height: 20px;
+  }
+  table td,
+table th {
+    padding: 10px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  .task {
+    overflow-x: scroll;
+  }
+
+  .discover,
+.projects {
+    width: 100%;
+  }
+
+  .task-header {
+    flex-direction: column;
+  }
+  .task-header .task-member {
+    margin-top: 50px;
+  }
+
+  table {
+    line-height: 20px;
+  }
+  table td,
+table th {
+    padding: 10px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,22 @@
+%table-border {
+  border: none;
+  text-align: left;
+}
+
+table {
+  width: 100%;
+  margin-top: 25px;
+  line-height: 40px;
+  border-collapse: collapse;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+td {
+  @extend %table-border;
+}
+
+th {
+  @extend %table-border;
+  font-weight: 600;
+}

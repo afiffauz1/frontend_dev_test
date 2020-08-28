@@ -1,22 +1,29 @@
 @import "default";
+@import "table";
 
 $main-bg: #262a41;
 $gray-color: #3c3f54;
+$purple-color: #a044ff;
 $white-text: whitesmoke;
 $black-text: #2f2f2b;
 
-%box {
-  border: none;
-  border-radius: 0.75em;
+%header-1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+%header-2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+%header-3 {
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 %container-basis {
   flex-basis: 50%;
-}
-
-%discover-default {
-  width: 60%;
-  margin: 100px auto;
 }
 
 %project-box {
@@ -44,9 +51,8 @@ body {
 
 .discover-container {
   @extend %container-basis;
-
   .nav {
-    @extend %box;
+    border-radius: 0.75em;
     padding: 12px;
     background-color: $gray-color;
     color: $white-text;
@@ -55,17 +61,97 @@ body {
 
 .tasklist-container {
   @extend %container-basis;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  padding: 20px;
+  border-radius: 1.2em;
+  color: $black-text;
+
+  .btn {
+    border: none;
+    padding: 10px 20px;
+    margin-top: 50px;
+    background-color: $purple-color;
+  }
+
+  a {
+    border: none;
+    display: inline-block;
+    color: $black-text;
+    align-self: flex-end;
+    margin-left: auto;
+    font-size: 3rem;
+    color: $white-text;
+    border-radius: 0.3em;
+
+    &:active {
+      background-color: $purple-color;
+      opacity: 0.8;
+    }
+  }
+}
+
+.task-header {
+  display: flex;
+}
+
+.task-info {
+  flex-basis: 65%;
+  h2 {
+    @extend %header-2;
+  }
+  p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    opacity: 0.7;
+    line-height: 30px;
+    margin-top: 20px;
+  }
+}
+
+.task-member {
+  flex-basis: 30%;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  a {
+    font-size: 2rem;
+    align-self: center;
+    opacity: 0.6;
+    color: $black-text;
+  }
+}
+
+.photo-member {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid white;
+  img {
+    width: 100%;
+  }
+}
+
+.task-content {
+  margin-top: 50px;
+  h3 {
+    @extend %header-3;
+  }
 }
 
 .discover {
-  @extend %discover-default;
+  width: 60%;
+  margin: 100px auto;
   color: $white-text;
   line-height: 45px;
   text-align: center;
   h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    text-align: justify;
+    @extend %header-1;
+    text-align: left;
   }
 
   p {
@@ -73,11 +159,12 @@ body {
     font-weight: 600;
     color: $white-text;
     opacity: 0.6;
-    text-align: justify;
+    text-align: left;
   }
 
   input {
-    @extend %box;
+    border: none;
+    border-radius: 1em;
     width: 100%;
     background-color: $gray-color;
     padding: 20px 40px;
@@ -92,7 +179,8 @@ body {
 }
 
 .projects {
-  @extend %discover-default;
+  width: 60%;
+  margin: 100px auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -104,66 +192,127 @@ body {
 }
 
 .green-house {
+  margin-right: 10px;
   @extend %center-text, %project-fontStyle;
   h1 {
-    @extend %project-box;
+    @extend %project-box, %header-1;
     background-image: linear-gradient(to top right, #ec008c, #fc6767);
-    font-size: 3rem;
-    font-weight: 700;
   }
 }
 
 .cyber-punk {
+  margin-right: 10px;
   @extend %center-text, %project-fontStyle;
   color: $white-text;
   h1 {
-    @extend %project-box;
+    @extend %project-box, %header-1;
     background-image: linear-gradient(to top right, #67b26f, #4ca2cd);
-    font-size: 3rem;
-    font-weight: 700;
   }
 }
 
 .easy-crypto {
+  margin-right: 10px;
   @extend %center-text, %project-fontStyle;
   color: $white-text;
   h1 {
-    @extend %project-box;
+    @extend %project-box, %header-1;
     background-image: linear-gradient(to top right, #a044ff, #6a3093);
-    font-size: 3rem;
-    font-weight: 700;
   }
 }
 
 .travel-app {
+  margin-right: 10px;
   @extend %center-text, %project-fontStyle;
   color: $white-text;
   h1 {
-    @extend %project-box;
+    @extend %project-box, %header-1;
     background-image: linear-gradient(to top right, #7f7fd5, #91eae4);
-    font-size: 3rem;
-    font-weight: 700;
   }
 }
 
 .landing-page {
+  margin-right: 10px;
   @extend %center-text, %project-fontStyle;
   color: $white-text;
   h1 {
-    @extend %project-box;
+    @extend %project-box, %header-1;
     background-image: linear-gradient(to top right, #fdc830, #f37335);
-    font-size: 3rem;
-    font-weight: 700;
   }
 }
 
 .other {
+  margin-right: 10px;
   @extend %center-text;
   color: $white-text;
   h1 {
-    @extend %project-box;
+    @extend %project-box, , %header-1;
     background-color: $gray-color;
-    font-size: 3rem;
-    font-weight: 700;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  body {
+    flex-direction: column;
+  }
+
+  .task {
+    overflow-x: auto;
+  }
+
+  .task-header {
+    justify-content: space-between;
+  }
+
+  .discover,
+  .projects {
+    width: 100%;
+  }
+  table {
+    line-height: 20px;
+
+    td,
+    th {
+      padding: 10px;
+    }
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  .task {
+    overflow-x: scroll;
+  }
+
+  .discover,
+  .projects {
+    width: 100%;
+  }
+
+  .task-header {
+    flex-direction: column;
+
+    .task-member {
+      margin-top: 50px;
+    }
+  }
+
+  table {
+    line-height: 20px;
+
+    td,
+    th {
+      padding: 10px;
+    }
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
   }
 }
