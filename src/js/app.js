@@ -84,18 +84,6 @@ btnAdd.addEventListener("click", function (event) {
   const statusTask = statusList[randomStatus];
   const taskTodo = textTodo[randomTask];
 
-  if (statusTask === "Approved") {
-    taskList = [
-      ...taskList,
-      { task: taskTodo, status: statusTask, done: true },
-    ];
-  } else {
-    taskList = [
-      ...taskList,
-      { task: taskTodo, status: statusTask, done: false },
-    ];
-  }
-
   taskData += `
       <tr>
           <th>${taskTodo}</th>
